@@ -212,3 +212,93 @@ a:hover { text-decoration: underline; }
 .text-danger { color: #f4212e; font-size: 0.9rem; }
 .text-success { color: #00ba7c; font-size: 0.9rem; }
 .empty-state { text-align: center; padding: 40px 0; }
+
+/* ── Search ── */
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 280px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f7f9f9;
+  border: 1.5px solid #e7e7e7;
+  border-radius: 20px;
+  padding: 6px 14px;
+  transition: border-color 0.15s;
+}
+.search-box:focus-within {
+  border-color: #1d9bf0;
+  background: #fff;
+}
+.search-icon { font-size: 0.85rem; }
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  width: 100%;
+  color: #0f1419;
+}
+.search-input::placeholder { color: #536471; }
+.search-spinner {
+  width: 14px; height: 14px;
+  border: 2px solid #e7e7e7;
+  border-top-color: #1d9bf0;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0; right: 0;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  overflow: hidden;
+  z-index: 200;
+}
+.search-empty {
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #536471;
+  text-align: center;
+}
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+.search-result-item:hover { background: #f7f9f9; }
+.search-avatar img,
+.search-avatar .avatar-placeholder {
+  width: 36px; height: 36px;
+  border-radius: 50%; object-fit: cover;
+}
+.search-result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.search-result-username {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #0f1419;
+}
+.search-result-name {
+  font-size: 0.8rem;
+  color: #536471;
+}
